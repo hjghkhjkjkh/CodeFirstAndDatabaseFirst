@@ -1,0 +1,44 @@
+Create database SINHVIENS
+go
+use SINHVIENS
+go
+
+Create table KHOA
+(
+	MAKHOA VARCHAR(15) PRIMARY KEY,
+	TENKHOA NVARCHAR(30)
+)
+
+Create table LOP
+(
+	MALOP VARCHAR(15) PRIMARY KEY,
+	TENLOP NVARCHAR(30)
+)
+
+Create table SINHVIEN
+(
+	MASV VARCHAR(15) PRIMARY KEY,
+	HOTEN NVARCHAR(100),
+	MAKHOA VARCHAR(15) FOREIGN KEY REFERENCES KHOA(MAKHOA),
+	MALOP VARCHAR(15) FOREIGN KEY REFERENCES LOP(MALOP)
+)
+
+alter table SINHVIEN
+add DOB Date
+
+insert into KHOA
+values 
+('K002', 'TDH'),
+('K003', 'DDT')
+
+insert into LOP
+values
+('L001', '21T1'),
+('L002', '21T2'),
+('L003', '21T3')
+
+insert into SINHVIEN
+values
+('SV001', 'Doan huynh Ngoc Son', 'K001', 'L001', '1/1/2004'),
+('SV002', 'Van A', 'K001', 'L001', '1/1/2005'),
+('SV003', 'Van B', 'K001', 'L001', '1/1/2005')

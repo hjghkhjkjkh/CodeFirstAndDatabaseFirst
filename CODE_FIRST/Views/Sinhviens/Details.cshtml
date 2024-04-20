@@ -1,0 +1,42 @@
+﻿@model CODE_FIRST.Models.SINHVIEN
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SINHVIEN</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lopId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lopId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.khoaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.khoaId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
